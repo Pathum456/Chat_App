@@ -37,9 +37,9 @@
                </children>
             </AnchorPane>
             <TextArea fx:id="txtClientPane" editable="false" layoutX="56.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="65.0" />
-            <HBox fx:id="hboxMessage" layoutX="142.0" layoutY="76.0" prefHeight="33.0" prefWidth="368.0" AnchorPane.bottomAnchor="492.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="75.0">
+            <HBox fx:id="hboxMessage" layoutX="16.0" layoutY="76.0" prefHeight="33.0" prefWidth="494.0" AnchorPane.bottomAnchor="492.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="75.0">
                <children>
-                  <VBox fx:id="vboxMessageFlow" prefHeight="33.0" prefWidth="489.0" />
+                  <VBox fx:id="vboxMessageFlow" prefHeight="33.0" prefWidth="492.0" />
                </children>
             </HBox>
          </children>

@@ -2,6 +2,7 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -34,6 +35,7 @@ public class ClientFormController {
     public HBox hboxMessage;
     public VBox vboxMessageFlow;
 
+
     Socket socket = null;
 
     public void initialize() throws IOException {
@@ -46,7 +48,25 @@ public class ClientFormController {
                     BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                     String record = bufferedReader.readLine();
                     System.out.println(record);
-                    txtClientPane.appendText(record);
+                 //   txtClientPane.appendText("\n");
+
+                    Platform.runLater(new Runnable(){
+                        @Override
+                        public void run() {
+                            HBox hBox=new HBox();
+                            hBox.setAlignment(Pos.CENTER_LEFT);
+                            hBox.setPadding(new Insets(5,10,5,5));
+                            Text text=new Text(record);
+                            TextFlow textFlow=new TextFlow(text);
+                            textFlow.setStyle("-fx-color:rgb(239,242,255);"
+                                    +"-fx-background-color: rgb(15,125,242);"+
+                                    "-fx-background-radius: 20px");
+                            textFlow.setPadding(new Insets(5,0,5,5));
+                            text.setFill(Color.color(0.934,0.945,0.996));
+                            hBox.getChildren().add(textFlow);
+                            vboxMessageFlow.getChildren().add(hBox);
+                        }
+                    });
 
                 }
             }catch (IOException e) {

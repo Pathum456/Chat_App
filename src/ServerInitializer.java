@@ -14,7 +14,15 @@ public class ServerInitializer extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setScene
-                (new Scene(FXMLLoader.load(getClass().getResource("view/ServerForm.fxml"))));
+                (new Scene(FXMLLoader.load(getClass().getResource("view/LoginForm.fxml"))));
+        primaryStage.setTitle("User Login Form");
+        primaryStage.setMinWidth(664);
+       // primaryStage.setMinHeight(390);
+        primaryStage.setMaxWidth(670);
+        primaryStage.setResizable(false);
+        primaryStage.setAlwaysOnTop(true);
+        primaryStage.setMaximized(false);
         primaryStage.show();
+
     }
 }
