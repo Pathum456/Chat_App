@@ -41,18 +41,21 @@ public class ServerFormController {
     public void initialize() {
         new Thread(() -> {
             try {
-                ServerSocket serverSocket= new ServerSocket(5000);
+
+                ServerSocket serverSocket = new ServerSocket(5000);
                 System.out.println("Server started!");
-                accept= serverSocket.accept();
+                accept = serverSocket.accept();
                 System.out.println("Client Connected!");
-                InputStreamReader inputStreamReader =
-                        new InputStreamReader(accept.getInputStream());
-                BufferedReader bufferedReader= new BufferedReader(inputStreamReader);
-                String record= bufferedReader.readLine();
-                /* while(true){if(!record.equals("exit")){*/
-                     System.out.println(record);
-                     txtServerPane.appendText(record);
-            } catch (Exception e) {
+                while (!serverSocket.isClosed()) {
+                    InputStreamReader inputStreamReader =
+                            new InputStreamReader(accept.getInputStream());
+                    BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                    String record = bufferedReader.readLine();
+                    /* while(true){if(!record.equals("exit")){*/
+                    System.out.println(record);
+                    txtServerPane.appendText(record);
+                }
+            }catch (Exception e) {
                 e.printStackTrace();
             }
         }).start();
@@ -62,14 +65,15 @@ public class ServerFormController {
 
     }
     public void sendMessage(MouseEvent mouseEvent) throws IOException {
-        while(true) {
-            if (!txtServerMassege.getText().equals("exit")) {
+     /*   while(true) {
+
+            } if (!txtServerMassege.getText().equals("exit")) {*/
+
                 PrintWriter printWriter = new PrintWriter(accept.getOutputStream());
                 printWriter.println(txtServerMassege.getText());
                 txtServerPane.appendText(txtServerMassege.getText());
                 printWriter.flush();
-            }
-        }
+
 
 
     }

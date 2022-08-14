@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/kaleesha/Downloads/fontawesomefx-commons-8.15.jar",
+        "/home/kaleesha/Downloads/fontawesomefx-fontawesome-4.7.0-5.jar",
+        "/home/kaleesha/Downloads/jfoenix-8.0.8.jar"
+    ]
+}
