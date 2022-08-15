@@ -58,7 +58,7 @@
                               <Image url="@../assets/4x4.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="SeverNameLbl" alignment="CENTER" layoutX="78.0" layoutY="10.0" prefHeight="24.0" prefWidth="108.0" text="Pathum" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="14.0">
+                        <Label fx:id="lblUsername" alignment="CENTER" layoutX="78.0" layoutY="10.0" prefHeight="24.0" prefWidth="108.0" text="Pathum" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="14.0">
                            <font>
                               <Font name="Vemana2000" size="16.0" />
                            </font>
