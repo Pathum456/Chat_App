@@ -108,6 +108,11 @@ public class ClientFormController extends Thread {
                         hBox.getChildren().add(textFlow);
                         vboxMessageFlow.getChildren().add(hBox);
 
+                        //catch Image
+                        //thaama iwr na habii
+                        //Image ek allgen ui ekt load weno
+                        //image ekth ekk image eke path ekth set weno eeka hda gnn oone
+
 
                         hBox.setAlignment(Pos.CENTER_LEFT);
                         hBox.setPadding(new Insets(5, 10, 5, 5));
