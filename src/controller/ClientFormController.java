@@ -47,8 +47,10 @@ public class ClientFormController extends Thread {
     BufferedReader bufferedReader;
     PrintWriter printWriter;
 
+
     FileChooser fileChooser;
     File filePath;
+    URL url;
 
     public void initialize() {
         connectSocket();
@@ -82,7 +84,8 @@ public class ClientFormController extends Thread {
                 for (int i = 1; i < tokens.length; i++) {
                     fulmsg.append(tokens[i]);
                 }
-                System.out.println("fulmsg : " + fulmsg);
+                System.out.println("fullmsg : " + fulmsg);
+
                 System.out.println();
                 if (cmd.equalsIgnoreCase(LoginController.username + ":")) {
                     continue;
@@ -104,6 +107,20 @@ public class ClientFormController extends Thread {
                         text.setFill(Color.color(0, 0, 0));
                         hBox.getChildren().add(textFlow);
                         vboxMessageFlow.getChildren().add(hBox);
+
+
+                        hBox.setAlignment(Pos.CENTER_LEFT);
+                        hBox.setPadding(new Insets(5, 10, 5, 5));
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(String.valueOf(fulmsg));
+                        imageView.setImage(image);
+                        imageView.setFitWidth(150);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+
                     }
                 });
                 //txtClientPane.appendText(msg + "\n");
@@ -129,7 +146,8 @@ public class ClientFormController extends Thread {
 
     public void sendChatsOnClick(MouseEvent mouseEvent) {
         String msg = txtClientMessage.getText();
-        printWriter.println(username + ": " + msg);
+        printWriter.println(username + ": " + url);
+        printWriter.println(username + ": " + url);
         txtClientPane.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
         HBox hBox = new HBox();
         hBox.setAlignment(Pos.CENTER_RIGHT);
@@ -153,6 +171,9 @@ public class ClientFormController extends Thread {
     public void chooseImageOnAction(MouseEvent mouseEvent) throws MalformedURLException {
         setImages(mouseEvent);
     }
+    public void sendImages(){
+
+    }
 
     public void setImages(MouseEvent mouseEvent) throws MalformedURLException {
         Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
@@ -167,7 +188,7 @@ public class ClientFormController extends Thread {
         File file = fileChooser.showOpenDialog(stage);
         if (file != null) {
             System.out.println("File Was Selected");
-            URL url = file.toURI().toURL();
+             url = file.toURI().toURL();
             System.out.println(url);
             HBox hBox = new HBox();
             hBox.setAlignment(Pos.CENTER_RIGHT);
@@ -175,7 +196,7 @@ public class ClientFormController extends Thread {
             ImageView imageView = new ImageView();
             Image image = new Image(String.valueOf(url));
             imageView.setImage(image);
-            imageView.setFitWidth(100);
+            imageView.setFitWidth(150);
             imageView.setFitHeight(100);
             VBox vBox = new VBox(imageView);
             vBox.setAlignment(Pos.CENTER_RIGHT);
