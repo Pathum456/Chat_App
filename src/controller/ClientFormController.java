@@ -9,6 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -20,7 +21,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.MalformedURLException;
 import java.net.Socket;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 import static controller.LoginController.username;
@@ -39,6 +42,7 @@ public class ClientFormController extends Thread {
     public HBox hboxMessage;
     public VBox vboxMessageFlow;
     public Label lblUsername;
+    public ImageView imgLoadImage;
     Socket socket;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
@@ -48,8 +52,9 @@ public class ClientFormController extends Thread {
 
     public void initialize() {
         connectSocket();
-       lblUsername.setText(username);
+        lblUsername.setText(username);
     }
+
     private void connectSocket() {
         try {
             socket = new Socket("localhost", 5000);
@@ -64,6 +69,7 @@ public class ClientFormController extends Thread {
 
         }
     }
+
     public void run() {
         try {
             while (true) {
@@ -83,19 +89,19 @@ public class ClientFormController extends Thread {
                 } else if (fulmsg.toString().equalsIgnoreCase("bye")) {
                     break;
                 }
-                Platform.runLater(new Runnable(){
+                Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        HBox hBox=new HBox();
+                        HBox hBox = new HBox();
                         hBox.setAlignment(Pos.CENTER_LEFT);
-                        hBox.setPadding(new Insets(5,10,5,5));
-                        Text text=new Text(msg);
-                        TextFlow textFlow=new TextFlow(text);
+                        hBox.setPadding(new Insets(5, 10, 5, 5));
+                        Text text = new Text(msg);
+                        TextFlow textFlow = new TextFlow(text);
                         textFlow.setStyle("-fx-color:rgb(239,242,255);"
-                                +"-fx-background-color: rgb(124,252,0);"+
+                                + "-fx-background-color: rgb(124,252,0);" +
                                 "-fx-background-radius: 10px");
-                        textFlow.setPadding(new Insets(5,0,5,5));
-                        text.setFill(Color.color(0,0,0));
+                        textFlow.setPadding(new Insets(5, 0, 5, 5));
+                        text.setFill(Color.color(0, 0, 0));
                         hBox.getChildren().add(textFlow);
                         vboxMessageFlow.getChildren().add(hBox);
                     }
@@ -117,6 +123,7 @@ public class ClientFormController extends Thread {
             }
         }*/
     }
+
     public void chatServerOnclick(MouseEvent mouseEvent) {
     }
 
@@ -124,16 +131,16 @@ public class ClientFormController extends Thread {
         String msg = txtClientMessage.getText();
         printWriter.println(username + ": " + msg);
         txtClientPane.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
-        HBox hBox=new HBox();
+        HBox hBox = new HBox();
         hBox.setAlignment(Pos.CENTER_RIGHT);
-        hBox.setPadding(new Insets(5,5,5,10));
-        Text text=new Text(msg);
-        TextFlow textFlow=new TextFlow(text);
+        hBox.setPadding(new Insets(5, 5, 5, 10));
+        Text text = new Text(msg);
+        TextFlow textFlow = new TextFlow(text);
         textFlow.setStyle("-fx-color:rgb(239,242,255);"
-                +"-fx-background-color: rgb(15,125,242);"+
+                + "-fx-background-color: rgb(15,125,242);" +
                 "-fx-background-radius: 20px");
-        textFlow.setPadding(new Insets(5,10,5,10));
-        text.setFill(Color.color(0.934,0.945,0.996));
+        textFlow.setPadding(new Insets(5, 10, 5, 10));
+        text.setFill(Color.color(0.934, 0.945, 0.996));
         hBox.getChildren().add(textFlow);
         vboxMessageFlow.getChildren().add(hBox);
         // txtClientPane.appendText(String.valueOf(text));
@@ -142,12 +149,41 @@ public class ClientFormController extends Thread {
             System.exit(0);
         }
     }
-    public void chooseImageOnAction(MouseEvent mouseEvent) {
+
+    public void chooseImageOnAction(MouseEvent mouseEvent) throws MalformedURLException {
         Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        fileChooser = new FileChooser();
+       /* fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a Image");
         this.filePath = fileChooser.showOpenDialog(stage);
         txtClientMessage.setText(filePath.getPath());
+*/
+        System.out.println("Load Image Button Pressed");
+        fileChooser = new FileChooser();
+
+        File file = fileChooser.showOpenDialog(stage);
+        if (file != null) {
+            System.out.println("File Was Selected");
+            URL url = file.toURI().toURL();
+            System.out.println(url);
+                HBox hBox = new HBox();
+                hBox.setAlignment(Pos.CENTER_RIGHT);
+                hBox.setPadding(new Insets(5, 10, 5, 5));
+                ImageView imageView = new ImageView();
+                Image image = new Image(String.valueOf(url));
+                imageView.setImage(image);
+                imageView.setFitWidth(100);
+                imageView.setFitHeight(100);
+                VBox vBox = new VBox(imageView);
+                vboxMessageFlow.getChildren().add(vBox);
+
+
+
+        }
+        //imgLoadImage.setImage(new Image(((URL) url).toExternalForm()));
+    }
+
+
+    public void chooseEmojiesOnAction(MouseEvent mouseEvent) {
     }
 
 

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
@@ -14,7 +12,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientFormController">
    <children>
-      <AnchorPane layoutX="204.0" layoutY="10.0" prefHeight="607.0" prefWidth="546.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutY="10.0" prefHeight="600.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane layoutY="393.0" prefHeight="98.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
@@ -24,51 +22,45 @@
                         <Image url="@../assets/send-message.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="60.0" layoutX="390.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="100.0">
+                  <ImageView fitHeight="40.0" fitWidth="60.0" layoutX="390.0" layoutY="29.0" onMouseClicked="#chooseImageOnAction" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="100.0">
                      <image>
                         <Image url="@../assets/upload.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="60.0" layoutX="330.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="160.0">
+                  <ImageView fitHeight="40.0" fitWidth="60.0" layoutX="330.0" layoutY="29.0" onMouseClicked="#chooseEmojiesOnAction" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="160.0">
                      <image>
                         <Image url="@../assets/emoji.png" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
-            <TextArea fx:id="txtClientPane" editable="false" layoutX="56.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="65.0" />
-            <HBox fx:id="hboxMessage" layoutX="16.0" layoutY="76.0" prefHeight="33.0" prefWidth="494.0" AnchorPane.bottomAnchor="492.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="75.0">
+            <TextArea fx:id="txtClientPane" editable="false" layoutX="56.0" layoutY="98.0" prefHeight="397.0" prefWidth="720.0" wrapText="true" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="98.0" />
+            <HBox fx:id="hboxMessage" layoutX="15.0" layoutY="98.0" prefHeight="33.0" prefWidth="494.0" AnchorPane.bottomAnchor="469.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="98.0">
                <children>
-                  <VBox fx:id="vboxMessageFlow" prefHeight="33.0" prefWidth="492.0" />
+                  <VBox fx:id="vboxMessageFlow" prefHeight="33.0" prefWidth="719.0" />
                </children>
             </HBox>
+            <Label fx:id="lblUsername" alignment="CENTER" layoutX="635.0" layoutY="38.0" prefHeight="41.0" prefWidth="92.0" AnchorPane.leftAnchor="635.0" AnchorPane.rightAnchor="23.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="592.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="592.0">
+               <image>
+                  <Image url="@../assets/user.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="607.0" prefWidth="220.0" style="-fx-background-color: #b0c4de;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <VBox layoutX="16.0" layoutY="39.0" prefHeight="501.0" prefWidth="184.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0">
-               <children>
-                  <AnchorPane prefHeight="60.0" prefWidth="184.0">
-                     <children>
-                        <ImageView fx:id="ImgClientProfile" fitHeight="60.0" fitWidth="60.0" layoutX="18.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0">
-                           <cursor>
-                              <Cursor fx:constant="NONE" />
-                           </cursor>
-                           <image>
-                              <Image url="@../assets/4x4.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="lblUsername" alignment="CENTER" layoutX="78.0" layoutY="10.0" prefHeight="24.0" prefWidth="108.0" text="Pathum" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="14.0">
-                           <font>
-                              <Font name="Vemana2000" size="16.0" />
-                           </font>
-                        </Label>
-                        <JFXButton fx:id="BtnSelectServer" buttonType="RAISED" layoutX="47.0" layoutY="17.0" onMouseClicked="#chatServerOnclick" text=" " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
+      <ImageView fitHeight="43.0" fitWidth="54.0" layoutX="43.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="20.0">
+         <image>
+            <Image url="@../assets/messages.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="106.0" layoutY="24.0" prefHeight="35.0" prefWidth="166.0" text="Chat Room" textFill="#190be4" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
