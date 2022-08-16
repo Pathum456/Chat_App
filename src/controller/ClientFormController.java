@@ -52,9 +52,12 @@ public class ClientFormController extends Thread {
     File filePath;
     URL url;
 
+
+
     public void initialize() {
         connectSocket();
         lblUsername.setText(username);
+
     }
 
     private void connectSocket() {
@@ -71,14 +74,14 @@ public class ClientFormController extends Thread {
 
         }
     }
-
+    String cmd;
     public void run() {
         try {
             while (true) {
                 String msg = bufferedReader.readLine();
                 System.out.println("Message : " + msg);
                 String[] tokens = msg.split(" ");
-                String cmd = tokens[0];
+                cmd = tokens[0];
                 System.out.println("cmd : " + cmd);
                 StringBuilder fulmsg = new StringBuilder();
                 for (int i = 1; i < tokens.length; i++) {
@@ -95,18 +98,19 @@ public class ClientFormController extends Thread {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        HBox hBox = new HBox();
-                        hBox.setAlignment(Pos.CENTER_LEFT);
-                        hBox.setPadding(new Insets(5, 10, 5, 5));
-                        Text text = new Text(msg);
-                        TextFlow textFlow = new TextFlow(text);
-                        textFlow.setStyle("-fx-color:rgb(239,242,255);"
-                                + "-fx-background-color: rgb(124,252,0);" +
-                                "-fx-background-radius: 10px");
-                        textFlow.setPadding(new Insets(5, 0, 5, 5));
-                        text.setFill(Color.color(0, 0, 0));
-                        hBox.getChildren().add(textFlow);
-                        vboxMessageFlow.getChildren().add(hBox);
+
+                            HBox hBox = new HBox();
+                            hBox.setAlignment(Pos.CENTER_RIGHT);
+                            hBox.setPadding(new Insets(5, 10, 5, 5));
+                            Text text = new Text(msg);
+                            TextFlow textFlow = new TextFlow(text);
+                            textFlow.setStyle("-fx-color:rgb(239,242,255);"
+                                    + "-fx-background-color: rgb(124,252,0);" +
+                                    "-fx-background-radius: 10px");
+                            textFlow.setPadding(new Insets(5, 0, 5, 5));
+                            text.setFill(Color.color(0, 0, 0));
+                            hBox.getChildren().add(textFlow);
+                            vboxMessageFlow.getChildren().add(hBox);
 
                         //catch Image
                         //thaama iwr na habii
@@ -114,17 +118,19 @@ public class ClientFormController extends Thread {
                         //image ekth ekk image eke path ekth set weno eeka hda gnn oone
 
 
-                        hBox.setAlignment(Pos.CENTER_LEFT);
-                        hBox.setPadding(new Insets(5, 10, 5, 5));
-                        ImageView imageView = new ImageView();
-                        Image image = new Image(String.valueOf(fulmsg));
-                        imageView.setImage(image);
-                        imageView.setFitWidth(150);
-                        imageView.setFitHeight(100);
-                        VBox vBox = new VBox(imageView);
-                        vBox.setAlignment(Pos.CENTER_RIGHT);
-                        vBox.setPadding(new Insets(5, 10, 5, 5));
-                        vboxMessageFlow.getChildren().add(vBox);
+                         //HBox hBox=new HBox();
+                         hBox.setAlignment(Pos.CENTER_LEFT);
+                            hBox.setPadding(new Insets(5, 10, 5, 5));
+                            ImageView imageView = new ImageView();
+                            Image image = new Image(String.valueOf(fulmsg));
+                            imageView.setImage(image);
+                            imageView.setFitWidth(150);
+                            imageView.setFitHeight(100);
+                            VBox vBox = new VBox(imageView);
+                            //vBox.setAlignment(Pos.CENTER_LEFT);
+                            vBox.setPadding(new Insets(5, 10, 5, 5));
+                            vboxMessageFlow.getChildren().add(vBox);
+
 
                     }
                 });
@@ -151,9 +157,14 @@ public class ClientFormController extends Thread {
 
     public void sendChatsOnClick(MouseEvent mouseEvent) {
         String msg = txtClientMessage.getText();
-        printWriter.println(username + ": " + url);
-        printWriter.println(username + ": " + url);
-        txtClientPane.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+        /*if (!url.equals("") || !url.equals(null)){
+            printWriter.println(path + ": " + url);
+            //url=null;
+        }*/
+            printWriter.println(username+": "+msg);
+
+
+        //txtClientPane.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
         HBox hBox = new HBox();
         hBox.setAlignment(Pos.CENTER_RIGHT);
         hBox.setPadding(new Insets(5, 5, 5, 10));
@@ -165,6 +176,7 @@ public class ClientFormController extends Thread {
         textFlow.setPadding(new Insets(5, 10, 5, 10));
         text.setFill(Color.color(0.934, 0.945, 0.996));
         hBox.getChildren().add(textFlow);
+       //vboxMessageFlow.setAlignment(Pos.CENTER_RIGHT);
         vboxMessageFlow.getChildren().add(hBox);
         // txtClientPane.appendText(String.valueOf(text));
         printWriter.flush();
@@ -179,10 +191,20 @@ public class ClientFormController extends Thread {
     public void sendImages(){
 
     }
+    String path="path";
 
     public void setImages(MouseEvent mouseEvent) throws MalformedURLException {
+        /*Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        fileChooser = new FileChooser();
+        fileChooser.setTitle("Choose a Image");
+        this.filePath = fileChooser.showOpenDialog(stage);
+        txtClientMessage.setText(filePath.getPath());
+       path=txtClientMessage.getText();
+        txtClientMessage.setText(null);
+        System.out.println(path);*/
+
         Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-       /* fileChooser = new FileChooser();
+       /**//* fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a Image");
         this.filePath = fileChooser.showOpenDialog(stage);
         txtClientMessage.setText(filePath.getPath());
@@ -194,7 +216,7 @@ public class ClientFormController extends Thread {
         if (file != null) {
             System.out.println("File Was Selected");
              url = file.toURI().toURL();
-            System.out.println(url);
+  /*          System.out.println(url);
             HBox hBox = new HBox();
             hBox.setAlignment(Pos.CENTER_RIGHT);
             hBox.setPadding(new Insets(5, 10, 5, 5));
@@ -208,6 +230,7 @@ public class ClientFormController extends Thread {
             vBox.setPadding(new Insets(5, 10, 5, 5));
             vboxMessageFlow.getChildren().add(vBox);
 
+       */
         }
     }
 
