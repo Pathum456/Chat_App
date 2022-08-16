@@ -157,10 +157,10 @@ public class ClientFormController extends Thread {
 
     public void sendChatsOnClick(MouseEvent mouseEvent) {
         String msg = txtClientMessage.getText();
-        /*if (!url.equals("") || !url.equals(null)){
+        if (!url.equals("") || !url.equals(null)){
             printWriter.println(path + ": " + url);
-            //url=null;
-        }*/
+            url=null;
+        }
             printWriter.println(username+": "+msg);
 
 
@@ -183,6 +183,8 @@ public class ClientFormController extends Thread {
         if (msg.equalsIgnoreCase("BYE") || (msg.equalsIgnoreCase("logout"))) {
             System.exit(0);
         }
+        txtClientMessage.setText("");
+        url=null;
     }
 
     public void chooseImageOnAction(MouseEvent mouseEvent) throws MalformedURLException {
