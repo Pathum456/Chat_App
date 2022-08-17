@@ -4,7 +4,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
-import javafx.geometry.NodeOrientation;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -12,6 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -26,8 +26,8 @@ import java.io.*;
 import java.net.MalformedURLException;
 import java.net.Socket;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.text.Normalizer;
 
 import static controller.LoginController.username;
 
@@ -46,6 +46,28 @@ public class ClientFormController extends Thread {
     public VBox vboxMessageFlow;
     public Label lblUsername;
     public ImageView imgLoadImage;
+    public AnchorPane rootEmoji;
+    public ImageView emoji1;
+    public ImageView emoji11;
+    public ImageView emoji2;
+    public ImageView emoji12;
+    public ImageView emoji3;
+    public ImageView emoji13;
+    public ImageView emoji4;
+    public ImageView emoji14;
+    public ImageView emoji5;
+    public ImageView emoji15;
+    public ImageView emoji6;
+    public ImageView emoji16;
+    public ImageView emoji7;
+    public ImageView emoji17;
+    public ImageView emoji8;
+    public ImageView emoji18;
+    public ImageView emoji9;
+    public ImageView emoji19;
+    public ImageView emoji10;
+    public ImageView emoji20;
+    public ImageView imgEmoji;
     Socket socket;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
@@ -54,7 +76,6 @@ public class ClientFormController extends Thread {
     FileChooser fileChooser;
     File filePath;
     URL url;
-
 
 
     public void initialize() {
@@ -77,6 +98,7 @@ public class ClientFormController extends Thread {
 
         }
     }
+
     public void run() {
         try {
             while (true) {
@@ -101,7 +123,7 @@ public class ClientFormController extends Thread {
                     @Override
                     public void run() {
 
-                            HBox hBox = new HBox();
+                        HBox hBox = new HBox();
                         /*if (!fulmsg.toString().endsWith(".png") || !fulmsg.toString().endsWith(".jpg") || !fulmsg.toString().endsWith(".jpeg") || !fulmsg.toString().endsWith(".gif")) {
                             System.out.println("text append");
                             hBox.setAlignment(Pos.CENTER_LEFT);
@@ -125,7 +147,7 @@ public class ClientFormController extends Thread {
                         //image ekth ekk image eke path ekth set weno eeka hda gnn oone
 
 
-                         //HBox hBox=new HBox();
+                        //HBox hBox=new HBox();
                         if (fulmsg.toString().endsWith(".png") || fulmsg.toString().endsWith(".jpg") || fulmsg.toString().endsWith(".jpeg") || fulmsg.toString().endsWith(".gif")) {
                             System.out.println("load image");
                             hBox.setAlignment(Pos.CENTER_LEFT);
@@ -140,7 +162,7 @@ public class ClientFormController extends Thread {
                             vBox.setPadding(new Insets(5, 10, 5, 5));
                             vboxMessageFlow.getChildren().add(vBox);
 
-                        }else{
+                        } else {
                             System.out.println("text append");
                             hBox.setAlignment(Pos.CENTER_LEFT);
                             hBox.setPadding(new Insets(5, 10, 5, 5));
@@ -151,11 +173,11 @@ public class ClientFormController extends Thread {
                                     "-fx-background-radius: 10px");
                             textFlow.setPadding(new Insets(5, 0, 5, 5));
                             text.setFill(Color.color(0, 0, 0));
+                            text.setFont(Font.font(20));
                             hBox.getChildren().add(textFlow);
                             vboxMessageFlow.getChildren().add(hBox);
                             System.out.println("image Path ekth enoo");
                         }
-
 
 
                     }
@@ -196,9 +218,10 @@ public class ClientFormController extends Thread {
         textFlow.setPadding(new Insets(5, 10, 5, 10));
         text.setFill(Color.color(0.934, 0.945, 0.996));
         //text.setStyle("-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%)");
-        text.setFont(Font.font("Verdana", FontPosture.ITALIC,14));
+        text.setFont(Font.font("Verdana", FontPosture.ITALIC, 14));
+        text.setFont(Font.font(20));
         hBox.getChildren().add(textFlow);
-       vboxMessageFlow.setAlignment(Pos.CENTER_RIGHT);
+        vboxMessageFlow.setAlignment(Pos.CENTER_RIGHT);
         vboxMessageFlow.getChildren().add(hBox);
         printWriter.flush();
         txtClientMessage.setText("");
@@ -206,14 +229,11 @@ public class ClientFormController extends Thread {
             System.exit(0);
         }
 
-       // url=null;
+        // url=null;
     }
 
     public void chooseImageOnAction(MouseEvent mouseEvent) throws MalformedURLException {
         setImages(mouseEvent);
-    }
-    public void sendImages(){
-
     }
 
 
@@ -249,12 +269,155 @@ public class ClientFormController extends Thread {
     }
 
     public void chooseEmojiesOnAction(MouseEvent mouseEvent) {
-       // txtClientMessage.setText("U+1F600");
-        CharSequence problemString="U+1F600";
+        // txtClientMessage.setText("U+1F600");
+       /* CharSequence problemString="U+1F600";
         String fixedString = Normalizer.normalize(problemString, Normalizer.Form.NFC);
         txtClientMessage.setText(fixedString);
+*/
+ /*       String s = "\uD83D\uDC7A";
 
+        StringBuilder sb = new StringBuilder();
 
+        for (int i = 0; i < s.length(); i++) {
+            if (Character.isSurrogate(s.charAt(i))) {
+                Integer res = Character.codePointAt(s, i);
+                i++;
+                sb.append("U+" + Integer.toHexString(res).toUpperCase());
+            } else {
+                sb.append(s.charAt(i));
+            }
+            System.out.println(sb.toString());
+            System.out.println(sb);
+            System.out.println(s);
+            txtClientMessage.appendText(s);*/
+        // }
+        rootEmoji.setVisible(true);
+        imgEmoji.setVisible(false);
+    }
+
+    public void sendEmojiOnMouseClick(MouseEvent mouseEvent) throws UnsupportedEncodingException {
+        if (mouseEvent.getSource() instanceof ImageView) {
+            ImageView icon = (ImageView) mouseEvent.getSource();
+            String e1 = "\uD83D\uDC7A";
+            switch (icon.getId()) {
+                case "emoji1":
+                    byte[] emojiBytes1 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x81};
+                    String emojiAsString1= new String(emojiBytes1, StandardCharsets.UTF_8);
+                  txtClientMessage.appendText(emojiAsString1);
+                   /* byte[] emojiBytes1 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x91, (byte) 0xba};
+                    System.out.println(emojiBytes1);
+                    String emojiAsString1= new String(emojiBytes1, StandardCharsets.US_ASCII);
+                    txtClientMessage.appendText(emojiAsString1);
+                    System.out.println(emojiAsString1);
+                    String cp = "\uD83D\uDC7A";
+                    byte b[] =cp.getBytes(StandardCharsets.UTF_8);
+                    for (int k=0; k<b.length; k++)
+                        System.out.printf(" %x ", b[k]);
+                    System.out.println();
+*/
+                    break;
+                case "emoji2":
+                    byte[] emojiBytes2 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x82};
+                    String emojiAsString2 = new String(emojiBytes2, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString2);
+
+                    break;
+                case "emoji3":
+                    byte[] emojiBytes3 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x83};
+                    String emojiAsString3 = new String(emojiBytes3, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString3);
+                    break;
+                case "emoji4":
+                    byte[] emojiBytes4 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x84};
+                    String emojiAsString4 = new String(emojiBytes4, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString4);
+                    break;
+                case "emoji5":
+                    byte[] emojiBytes5 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x85};
+                    String emojiAsString5 = new String(emojiBytes5, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString5);
+                    break;
+                case "emoji6":
+                    byte[] emojiBytes6 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x86};
+                    String emojiAsString6 = new String(emojiBytes6, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString6);
+                    break;
+                case "emoji7":
+                    byte[] emojiBytes7 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x87};
+                    String emojiAsString7 = new String(emojiBytes7, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString7);
+
+                    break;
+                case "emoji8":
+                    byte[] emojiBytes8 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x88};
+                    String emojiAsString8 = new String(emojiBytes8, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString8);
+                    break;
+                case "emoji9":
+                    byte[] emojiBytes9 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x89};
+                    String emojiAsString9 = new String(emojiBytes9, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString9);
+                    break;
+                case "emoji10":
+                    byte[] emojiBytes10 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x8A};
+                    String emojiAsString10 = new String(emojiBytes10, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString10);
+                    break;
+                case "emoji11":
+                    byte[] emojiBytes11 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x8B};
+                    String emojiAsString11 = new String(emojiBytes11, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString11);
+                    break;
+                case "emoji12":
+                    byte[] emojiBytes12 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x8C};
+                    String emojiAsString12 = new String(emojiBytes12, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString12);
+                    break;
+                case "emoji13":
+                    byte[] emojiBytes13 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x8D};
+                    String emojiAsString13 = new String(emojiBytes13, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString13);
+                    break;
+                case "emoji14":
+                    byte[] emojiBytes14 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x8F};
+                    String emojiAsString14 = new String(emojiBytes14, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString14);
+                    break;
+                case "emoji15":
+                    byte[] emojiBytes15 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x92};
+                    String emojiAsString15 = new String(emojiBytes15, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString15);
+                    break;
+                case "emoji16":
+                    byte[] emojiBytes16 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x93};
+                    String emojiAsString16 = new String(emojiBytes16, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString16);
+                    break;
+                case "emoji17":
+                    byte[] emojiBytes17 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x94};
+                    String emojiAsString17 = new String(emojiBytes17, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString17);
+                    break;
+                case "emoji18":
+                    byte[] emojiBytes18 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x96};
+                    String emojiAsString18 = new String(emojiBytes18, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString18);
+                    break;
+                case "emoji19":
+                    byte[] emojiBytes19 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x9A};
+                    String emojiAsString19 = new String(emojiBytes19, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString19);
+                    break;
+                case "emoji20":
+                    byte[] emojiBytes20 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x9D};
+                    String emojiAsString20= new String(emojiBytes20, StandardCharsets.UTF_8);
+                    txtClientMessage.appendText(emojiAsString20);
+                    break;
+            }
+        }
+
+        rootEmoji.setVisible(false);
+        imgEmoji.setVisible(true);
     }
 
 
