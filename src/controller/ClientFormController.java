@@ -26,7 +26,6 @@ import java.io.*;
 import java.net.MalformedURLException;
 import java.net.Socket;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 import static controller.LoginController.username;
@@ -76,12 +75,22 @@ public class ClientFormController extends Thread {
     FileChooser fileChooser;
     File filePath;
     URL url;
-
+    String []ePath=new String[20];
 
     public void initialize() {
         connectSocket();
         lblUsername.setText(username);
 
+
+      //  ePath= {"assets/emojis/1.png"};
+        {
+            for (int i = 0; i < ePath.length; i++) {
+                ePath[i] = "assets/emojis/" + (i + 1) + ".png";
+                //System.out.println(ePath[i]);
+
+            }
+            System.out.println("Emojis path set to array");
+        }
     }
 
     private void connectSocket() {
@@ -155,7 +164,7 @@ public class ClientFormController extends Thread {
                             ImageView imageView = new ImageView();
                             Image image = new Image(String.valueOf(fulmsg));
                             imageView.setImage(image);
-                            imageView.setFitWidth(150);
+                            imageView.setFitWidth(100);
                             imageView.setFitHeight(100);
                             VBox vBox = new VBox(imageView);
                             //vBox.setAlignment(Pos.CENTER_LEFT);
@@ -176,7 +185,6 @@ public class ClientFormController extends Thread {
                             text.setFont(Font.font(20));
                             hBox.getChildren().add(textFlow);
                             vboxMessageFlow.getChildren().add(hBox);
-                            System.out.println("image Path ekth enoo");
                         }
 
 
@@ -299,12 +307,33 @@ public class ClientFormController extends Thread {
     public void sendEmojiOnMouseClick(MouseEvent mouseEvent) throws UnsupportedEncodingException {
         if (mouseEvent.getSource() instanceof ImageView) {
             ImageView icon = (ImageView) mouseEvent.getSource();
-            String e1 = "\uD83D\uDC7A";
+
+
+
+            /*for (int i = 0; i < ePath.length; i++) {
+                ePath[i]="assets/emojis/"+(i+1)+".png";
+                System.out.println(ePath[i]);
+
+            }*/
             switch (icon.getId()) {
                 case "emoji1":
                     byte[] emojiBytes1 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x81};
-                    String emojiAsString1= new String(emojiBytes1, StandardCharsets.UTF_8);
-                  txtClientMessage.appendText(emojiAsString1);
+                    String emojiAsString1 = new String(emojiBytes1, StandardCharsets.UTF_8);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[0]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[0]);
+                    } else {
+                        txtClientMessage.appendText(emojiAsString1);
+
+                    }
                    /* byte[] emojiBytes1 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x91, (byte) 0xba};
                     System.out.println(emojiBytes1);
                     String emojiAsString1= new String(emojiBytes1, StandardCharsets.US_ASCII);
@@ -320,104 +349,336 @@ public class ClientFormController extends Thread {
                 case "emoji2":
                     byte[] emojiBytes2 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x82};
                     String emojiAsString2 = new String(emojiBytes2, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString2);
 
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[1]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[1]);
+                    } else {
+                        txtClientMessage.appendText(emojiAsString2);
+                    }
                     break;
                 case "emoji3":
                     byte[] emojiBytes3 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x83};
                     String emojiAsString3 = new String(emojiBytes3, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString3);
+
+                    String ste3="assets/emojis/3.png";
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[2]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[2]);
+                    } else {
+                        txtClientMessage.appendText(emojiAsString3);
+                    }
                     break;
                 case "emoji4":
                     byte[] emojiBytes4 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x84};
                     String emojiAsString4 = new String(emojiBytes4, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString4);
+
+                    String ste4="assets/emojis/2.png";
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[3]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[3]);
+                    } else {
+                        txtClientMessage.appendText(emojiAsString4);
+                    }
                     break;
                 case "emoji5":
                     byte[] emojiBytes5 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x85};
                     String emojiAsString5 = new String(emojiBytes5, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString5);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[4]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[4]);
+                    } else {
+                        txtClientMessage.appendText(emojiAsString5);
+                    }
+
                     break;
                 case "emoji6":
                     byte[] emojiBytes6 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x86};
                     String emojiAsString6 = new String(emojiBytes6, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString6);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[5]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[5]);
+                    } else {
+                        txtClientMessage.appendText(emojiAsString6);
+                    }
                     break;
                 case "emoji7":
                     byte[] emojiBytes7 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x89};
                     String emojiAsString7 = new String(emojiBytes7, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString7);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[6]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[6]);
+                    } else {
+                        txtClientMessage.appendText(emojiAsString7);
+                    }
 
                     break;
                 case "emoji8":
                     byte[] emojiBytes8 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x8A};
                     String emojiAsString8 = new String(emojiBytes8, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString8);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[7]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[7]);
+                    } else {
+                        txtClientMessage.appendText(emojiAsString8);
+                    }
                     break;
                 case "emoji9":
                     byte[] emojiBytes9 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x8B};
                     String emojiAsString9 = new String(emojiBytes9, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString9);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[8]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[8]);
+                    } else {
+                        txtClientMessage.appendText(emojiAsString9);
+                    }
                     break;
                 case "emoji10":
                     byte[] emojiBytes10 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x8C};
                     String emojiAsString10 = new String(emojiBytes10, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString10);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[9]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[9]);
+                    } else {txtClientMessage.appendText(emojiAsString10);}
                     break;
                 case "emoji11":
                     byte[] emojiBytes11 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0xAD};
                     String emojiAsString11 = new String(emojiBytes11, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString11);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[10]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[10]);
+                    } else {txtClientMessage.appendText(emojiAsString11);}
                     break;
                 case "emoji12":
                     byte[] emojiBytes12 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x92};
                     String emojiAsString12 = new String(emojiBytes12, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString12);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[11]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[11]);
+                    } else {txtClientMessage.appendText(emojiAsString12);}
                     break;
                 case "emoji13":
                     byte[] emojiBytes13 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x93};
                     String emojiAsString13 = new String(emojiBytes13, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString13);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[12]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[12]);
+                    } else {txtClientMessage.appendText(emojiAsString13);}
                     break;
                 case "emoji14":
                     byte[] emojiBytes14 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x94};
                     String emojiAsString14 = new String(emojiBytes14, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString14);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[13]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[13]);
+                    } else {txtClientMessage.appendText(emojiAsString14);}
                     break;
                 case "emoji15":
                     byte[] emojiBytes15 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x96};
                     String emojiAsString15 = new String(emojiBytes15, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString15);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[14]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[14]);
+                    } else {
+                        txtClientMessage.appendText(emojiAsString15);
+                    }
                     break;
                 case "emoji16":
                     byte[] emojiBytes16 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x98};
                     String emojiAsString16 = new String(emojiBytes16, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString16);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[15]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[15]);
+                    } else {txtClientMessage.appendText(emojiAsString16);}
                     break;
                 case "emoji17":
                     byte[] emojiBytes17 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x94};
                     String emojiAsString17 = new String(emojiBytes17, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString17);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[16]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[16]);
+                    } else {txtClientMessage.appendText(emojiAsString17);}
                     break;
                 case "emoji18":
                     byte[] emojiBytes18 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x9A};
                     String emojiAsString18 = new String(emojiBytes18, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString18);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[17]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[17]);
+                    } else {txtClientMessage.appendText(emojiAsString18);}
                     break;
                 case "emoji19":
                     byte[] emojiBytes19 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x9C};
                     String emojiAsString19 = new String(emojiBytes19, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString19);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[18]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[18]);
+                    } else {txtClientMessage.appendText(emojiAsString19);}
                     break;
                 case "emoji20":
                     byte[] emojiBytes20 = new byte[]{(byte) 0xF0, (byte) 0x9F, (byte) 0x98, (byte) 0x9D};
-                    String emojiAsString20= new String(emojiBytes20, StandardCharsets.UTF_8);
-                    txtClientMessage.appendText(emojiAsString20);
+                    String emojiAsString20 = new String(emojiBytes20, StandardCharsets.UTF_8);
+                    if (txtClientMessage.getText().equalsIgnoreCase("") || txtClientMessage.getText().equalsIgnoreCase(null)) {
+                        ImageView imageView = new ImageView();
+                        Image image = new Image(ePath[19]);
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        VBox vBox = new VBox(imageView);
+                        vBox.setAlignment(Pos.CENTER_RIGHT);
+                        vBox.setPadding(new Insets(5, 10, 5, 5));
+                        vboxMessageFlow.getChildren().add(vBox);
+                        printWriter.println(username + ": " + ePath[19]);
+                    } else {txtClientMessage.appendText(emojiAsString20);}
                     break;
             }
         }
 
-       /* rootEmoji.setVisible(false);*/
+        /* rootEmoji.setVisible(false);*/
 
     }
 
