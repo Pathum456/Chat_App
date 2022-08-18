@@ -149,7 +149,20 @@ public class ClientFormController extends Thread {
                             System.out.println("image Path ekth enoo");
                         }*/
 
-
+                        if (fulmsg.toString().startsWith("assets/emojis/") ) {
+                            System.out.println("Emoji path "+fulmsg);
+                            hBox.setAlignment(Pos.CENTER_LEFT);
+                            hBox.setPadding(new Insets(5, 10, 5, 5));
+                            ImageView imageView = new ImageView();
+                            Image image = new Image(String.valueOf(fulmsg));
+                            imageView.setImage(image);
+                            imageView.setFitWidth(50);
+                            imageView.setFitHeight(50);
+                            VBox vBox = new VBox(imageView);
+                            //vBox.setAlignment(Pos.CENTER_LEFT);
+                            vBox.setPadding(new Insets(5, 10, 5, 5));
+                            vboxMessageFlow.getChildren().add(vBox);
+                        }
                         //catch Image
                         //thaama iwr na habii
                         //Image ek allgen ui ekt load weno
@@ -157,7 +170,7 @@ public class ClientFormController extends Thread {
 
 
                         //HBox hBox=new HBox();
-                        if (fulmsg.toString().endsWith(".png") || fulmsg.toString().endsWith(".jpg") || fulmsg.toString().endsWith(".jpeg") || fulmsg.toString().endsWith(".gif")) {
+                        else if (fulmsg.toString().endsWith(".png") || fulmsg.toString().endsWith(".jpg") || fulmsg.toString().endsWith(".jpeg") || fulmsg.toString().endsWith(".gif")) {
                             System.out.println("load image");
                             hBox.setAlignment(Pos.CENTER_LEFT);
                             hBox.setPadding(new Insets(5, 10, 5, 5));
