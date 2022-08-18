@@ -35,110 +35,6 @@
             </ScrollPane>
             <AnchorPane layoutY="477.0" prefHeight="128.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <AnchorPane fx:id="rootEmoji" layoutX="267.0" layoutY="-75.0" prefHeight="195.0" prefWidth="323.0" visible="false">
-                     <children>
-                        <ImageView fx:id="emoji1" fitHeight="43.0" fitWidth="55.0" layoutX="8.0" layoutY="7.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/1.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji11" fitHeight="43.0" fitWidth="55.0" layoutX="8.0" layoutY="117.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/3.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji2" fitHeight="43.0" fitWidth="40.0" layoutX="72.0" layoutY="7.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/5.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji12" fitHeight="43.0" fitWidth="55.0" layoutX="72.0" layoutY="117.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/13.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji3" fitHeight="43.0" fitWidth="55.0" layoutX="135.0" layoutY="7.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/4.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji13" fitHeight="43.0" fitWidth="55.0" layoutX="135.0" layoutY="117.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/14.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji4" fitHeight="43.0" fitWidth="55.0" layoutX="198.0" layoutY="8.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/6.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji14" fitHeight="43.0" fitWidth="55.0" layoutX="198.0" layoutY="118.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/15.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji5" fitHeight="43.0" fitWidth="55.0" layoutX="261.0" layoutY="8.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/7.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji15" fitHeight="43.0" fitWidth="55.0" layoutX="261.0" layoutY="118.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/16.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji6" fitHeight="43.0" fitWidth="55.0" layoutX="8.0" layoutY="60.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/8.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji16" fitHeight="43.0" fitWidth="55.0" layoutX="8.0" layoutY="172.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/17.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji7" fitHeight="43.0" fitWidth="55.0" layoutX="72.0" layoutY="60.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/9.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji17" fitHeight="43.0" fitWidth="55.0" layoutX="72.0" layoutY="172.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/18.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji8" fitHeight="43.0" fitWidth="55.0" layoutX="135.0" layoutY="60.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/10.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji18" fitHeight="43.0" fitWidth="55.0" layoutX="135.0" layoutY="172.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/19.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji9" fitHeight="43.0" fitWidth="55.0" layoutX="198.0" layoutY="61.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/11.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji19" fitHeight="43.0" fitWidth="55.0" layoutX="198.0" layoutY="173.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/20.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji10" fitHeight="43.0" fitWidth="55.0" layoutX="261.0" layoutY="59.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/12.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="emoji20" fitHeight="43.0" fitWidth="55.0" layoutX="261.0" layoutY="172.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/emojis/2.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
                   <JFXTextField fx:id="txtClientMessage" layoutX="14.0" layoutY="64.0" prefHeight="35.0" prefWidth="513.0" promptText="Type Massage" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="223.0" AnchorPane.topAnchor="64.0" />
                   <ImageView fx:id="imgSendChats" fitHeight="40.0" fitWidth="60.0" layoutX="460.0" layoutY="29.0" onMouseClicked="#sendChatsOnClick" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <image>
@@ -155,6 +51,110 @@
                         <Image url="@../assets/emoji.png" />
                      </image>
                   </ImageView>
+                  <AnchorPane fx:id="rootEmoji" layoutX="267.0" layoutY="-75.0" prefHeight="195.0" prefWidth="323.0" visible="false">
+                     <children>
+                        <ImageView fx:id="emoji1" fitHeight="43.0" fitWidth="55.0" layoutX="8.0" layoutY="7.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/1.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji11" fitHeight="43.0" fitWidth="55.0" layoutX="8.0" layoutY="117.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/11.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji2" fitHeight="43.0" fitWidth="40.0" layoutX="72.0" layoutY="7.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji12" fitHeight="43.0" fitWidth="55.0" layoutX="72.0" layoutY="117.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/12.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji3" fitHeight="43.0" fitWidth="55.0" layoutX="135.0" layoutY="7.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/3.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji13" fitHeight="43.0" fitWidth="55.0" layoutX="135.0" layoutY="117.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/13.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji4" fitHeight="43.0" fitWidth="55.0" layoutX="198.0" layoutY="8.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/4.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji14" fitHeight="43.0" fitWidth="55.0" layoutX="198.0" layoutY="118.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/14.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji5" fitHeight="43.0" fitWidth="55.0" layoutX="261.0" layoutY="8.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/5.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji15" fitHeight="43.0" fitWidth="55.0" layoutX="261.0" layoutY="118.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/15.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji6" fitHeight="43.0" fitWidth="55.0" layoutX="8.0" layoutY="60.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/6.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji16" fitHeight="43.0" fitWidth="55.0" layoutX="8.0" layoutY="172.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/16.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji7" fitHeight="43.0" fitWidth="55.0" layoutX="72.0" layoutY="60.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/7.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji17" fitHeight="43.0" fitWidth="55.0" layoutX="72.0" layoutY="172.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/17.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji8" fitHeight="43.0" fitWidth="55.0" layoutX="135.0" layoutY="60.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/8.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji18" fitHeight="43.0" fitWidth="55.0" layoutX="135.0" layoutY="172.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/18.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji9" fitHeight="43.0" fitWidth="55.0" layoutX="198.0" layoutY="61.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/9.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji19" fitHeight="43.0" fitWidth="55.0" layoutX="198.0" layoutY="173.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/19.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji10" fitHeight="43.0" fitWidth="55.0" layoutX="261.0" layoutY="59.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/10.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="emoji20" fitHeight="43.0" fitWidth="55.0" layoutX="261.0" layoutY="172.0" onMouseClicked="#sendEmojiOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/emojis/20.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </children>
