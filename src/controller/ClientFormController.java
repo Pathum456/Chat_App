@@ -301,14 +301,12 @@ public class ClientFormController extends Thread {
             txtClientMessage.appendText(s);*/
         // }
         rootEmoji.setVisible(true);
-        imgEmoji.setVisible(false);
+       imgEmoji.setVisible(false);
     }
 
     public void sendEmojiOnMouseClick(MouseEvent mouseEvent) throws UnsupportedEncodingException {
         if (mouseEvent.getSource() instanceof ImageView) {
             ImageView icon = (ImageView) mouseEvent.getSource();
-
-
 
             /*for (int i = 0; i < ePath.length; i++) {
                 ePath[i]="assets/emojis/"+(i+1)+".png";
@@ -323,13 +321,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[0]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[0]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {
                         txtClientMessage.appendText(emojiAsString1);
 
@@ -354,13 +354,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[1]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[1]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {
                         txtClientMessage.appendText(emojiAsString2);
                     }
@@ -374,13 +376,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[2]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[2]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {
                         txtClientMessage.appendText(emojiAsString3);
                     }
@@ -394,13 +398,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[3]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[3]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {
                         txtClientMessage.appendText(emojiAsString4);
                     }
@@ -412,13 +418,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[4]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[4]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {
                         txtClientMessage.appendText(emojiAsString5);
                     }
@@ -431,13 +439,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[5]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[5]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {
                         txtClientMessage.appendText(emojiAsString6);
                     }
@@ -449,13 +459,16 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[6]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[6]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
+
                     } else {
                         txtClientMessage.appendText(emojiAsString7);
                     }
@@ -468,13 +481,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[7]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[7]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {
                         txtClientMessage.appendText(emojiAsString8);
                     }
@@ -486,13 +501,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[8]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[8]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {
                         txtClientMessage.appendText(emojiAsString9);
                     }
@@ -504,13 +521,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[9]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[9]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {txtClientMessage.appendText(emojiAsString10);}
                     break;
                 case "emoji11":
@@ -520,13 +539,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[10]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[10]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {txtClientMessage.appendText(emojiAsString11);}
                     break;
                 case "emoji12":
@@ -536,13 +557,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[11]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[11]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {txtClientMessage.appendText(emojiAsString12);}
                     break;
                 case "emoji13":
@@ -552,13 +575,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[12]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[12]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {txtClientMessage.appendText(emojiAsString13);}
                     break;
                 case "emoji14":
@@ -568,13 +593,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[13]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[13]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {txtClientMessage.appendText(emojiAsString14);}
                     break;
                 case "emoji15":
@@ -584,13 +611,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[14]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[14]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {
                         txtClientMessage.appendText(emojiAsString15);
                     }
@@ -602,13 +631,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[15]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[15]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {txtClientMessage.appendText(emojiAsString16);}
                     break;
                 case "emoji17":
@@ -618,13 +649,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[16]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[16]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {txtClientMessage.appendText(emojiAsString17);}
                     break;
                 case "emoji18":
@@ -634,13 +667,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[17]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[17]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {txtClientMessage.appendText(emojiAsString18);}
                     break;
                 case "emoji19":
@@ -650,13 +685,15 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[18]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[18]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {txtClientMessage.appendText(emojiAsString19);}
                     break;
                 case "emoji20":
@@ -666,19 +703,21 @@ public class ClientFormController extends Thread {
                         ImageView imageView = new ImageView();
                         Image image = new Image(ePath[19]);
                         imageView.setImage(image);
-                        imageView.setFitWidth(100);
-                        imageView.setFitHeight(100);
+                        imageView.setFitWidth(50);
+                        imageView.setFitHeight(50);
                         VBox vBox = new VBox(imageView);
                         vBox.setAlignment(Pos.CENTER_RIGHT);
                         vBox.setPadding(new Insets(5, 10, 5, 5));
                         vboxMessageFlow.getChildren().add(vBox);
                         printWriter.println(username + ": " + ePath[19]);
+                        rootEmoji.setVisible(false);
+                        imgEmoji.setVisible(true);
                     } else {txtClientMessage.appendText(emojiAsString20);}
                     break;
             }
         }
 
-        /* rootEmoji.setVisible(false);*/
+
 
     }
 
