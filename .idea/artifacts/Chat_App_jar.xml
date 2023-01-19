@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Chat_App:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Chat_App</output-path>
+    <root id="archive" name="Chat_App.jar">
+      <element id="module-output" name="Chat_App" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../fontawesomefx-commons-8.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../fontawesomefx-fontawesome-4.7.0-5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../jfoenix-8.0.8.jar" path-in-jar="/" />
+      <element id="library" level="project" name="fontawesomefx-commons-8.15" />
+    </root>
+  </artifact>
+</component>

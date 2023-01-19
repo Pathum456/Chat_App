@@ -167,8 +167,6 @@ public class ClientFormController extends Thread {
                         //thaama iwr na habii
                         //Image ek allgen ui ekt load weno
                         //image ekth ekk image eke path ekth set weno eeka hda gnn oone
-
-
                         //HBox hBox=new HBox();
                         else if (fulmsg.toString().endsWith(".png") || fulmsg.toString().endsWith(".jpg") || fulmsg.toString().endsWith(".jpeg") || fulmsg.toString().endsWith(".gif")) {
                             System.out.println("load image");
@@ -220,10 +218,6 @@ public class ClientFormController extends Thread {
             }
         }*/
     }
-
-    public void chatServerOnclick(MouseEvent mouseEvent) {
-    }
-
     public void sendChatsOnClick(MouseEvent mouseEvent) {
         String msg = txtClientMessage.getText();
         printWriter.println(LoginController.username + ": " + msg);
